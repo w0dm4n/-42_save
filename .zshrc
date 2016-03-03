@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/nfs/zfs-student-2/users/frmarinh/.oh-my-zsh
+export ZSH=/nfs/2015/f/frmarinh/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -91,10 +91,45 @@ echo "#     # #      #      #      #    #    #    # ######      #   #   #      #
 echo "#     # #      #      #      #    #    #    # #    # #    #   #   #      #   #"
 echo "#     # ###### ###### ######  ####     #    # #    #  ####    #   ###### #   #"
 alias r="rm -rf"
-source /nfs/zfs-student-2/users/frmarinh/.Sublivim/sublivimrc.sh 
 alias c="cat"
-#alias ls="~/Desktop/work/ft_ls/ft_ls -lG"
+alias ls="~/Desktop/work/ft_ls/ft_ls -lG"
+alias lsa="~/Desktop/work/ft_ls/ft_ls -lGa"
+alias fdp="/nfs/2015/f/frmarinh/Desktop/work/auto_push/auto"
 USER=frmarinh
 export USER
 MAIL="$USER@student.42.fr"
 export MAIL
+#echo "____________________________________________________________________________"
+#/nfs/zfs-student-2/users/frmarinh/Desktop/work/minishell/minishell
+source /nfs/2015/f/frmarinh/.Sublivim/sublivimrc.sh
+alias no_popup="/nfs/2015/f/frmarinh/Desktop/work/dieinhell_popup/no_popup.sh"
+alias lockscreen='/System/Library/CoreServices/Menu\ Extras/user.menu/Contents/Resources/CGSession -suspend'
+#search() { grep -rnw '.' -e "$1"; }
+search()
+{
+	size=0
+	nbr=0
+	for var in "$@"
+	do
+		((size++))
+	done
+	for var in "$@"
+	do
+		((nbr++))
+		if [ "$nbr" -eq "$size" ]
+		then
+			to_find="$var"
+		fi
+	done
+	i=0
+	for var in "$@"
+	do
+		((i++))
+		if [ "$i" -lt "$size" ]
+		then
+			find . -name "$var" -exec grep -i "$to_find" {} \; -print
+		fi
+	done
+	#find . -name "$1" -exec grep -i "$2" {} \; -print;
+}
+#alias search="_search() { find . -name '$1' -exec grep -i '$2' {} \; -print ;}; _search"
