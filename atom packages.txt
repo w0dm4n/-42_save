@@ -1,0 +1,5 @@
+activate-power-mode
+atom-beautify			language-x86asm			monokai-dark			platformio-ide-terminal
+activate-power-mode		autocomplete-clang		loved-syntax			monokai-slate			symbols-tree-view
+afterglow-monokai-syntax	goto-definition			minimap				neon-syntax			tetromino
+ask-stack			highlight-selected		monokai				output-panel

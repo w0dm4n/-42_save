@@ -1,0 +1,1 @@
+docker run -v /Users/frmarinh/Desktop/work:/home --name alpine -it alpine /bin/sh

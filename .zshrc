@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/nfs/2015/f/frmarinh/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
+#export ZSH=/Users/frmarinh/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +50,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 # User configuration
 
@@ -101,9 +102,14 @@ MAIL="$USER@student.42.fr"
 export MAIL
 #echo "____________________________________________________________________________"
 #/nfs/zfs-student-2/users/frmarinh/Desktop/work/minishell/minishell
-source /nfs/2015/f/frmarinh/.Sublivim/sublivimrc.sh
+#source /nfs/2015/f/frmarinh/.Sublivim/sublivimrc.sh
+#source /Users/frmarinh/.Sublivim/sublivimrc.sh
 alias no_popup="/nfs/2015/f/frmarinh/Desktop/work/dieinhell_popup/no_popup.sh"
 alias lockscreen='/System/Library/CoreServices/Menu\ Extras/user.menu/Contents/Resources/CGSession -suspend'
+alias docker="~/.brew/bin/docker"
+alias docker-machine="~/.brew/bin/docker-machine"
+alias docker-env="~/.brew/bin/docker-machine env Char"
+alias docker-exec="docker start new_alpine ; docker exec -it new_alpine /bin/zsh"
 #search() { grep -rnw '.' -e "$1"; }
 search()
 {
@@ -132,4 +138,12 @@ search()
 	done
 	#find . -name "$1" -exec grep -i "$2" {} \; -print;
 }
-#alias search="_search() { find . -name '$1' -exec grep -i '$2' {} \; -print ;}; _search"
+alias homebrew="~/.brew/bin/brew"
+alias nasm="~/.brew/Cellar/nasm/2.12.02/bin/nasm"
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/frmarinh/.docker/machine/machines/Char"
+export DOCKER_MACHINE_NAME="Char"
+alias gobjdump="/Users/frmarinh/.brew/Cellar/binutils/2.28/bin/gobjdump"
+PATH=$PATH:/Users/frmarinh/.brew/bin
+alias tig="/Users/frmarinh/.brew/Cellar/tig/2.2.2/bin/tig"
